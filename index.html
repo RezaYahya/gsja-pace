@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GSJA PACE</title>
+<meta name="description" content="Website resmi GSJA PACE. Ibadah, renungan, event, dan live streaming.">
+<meta name="theme-color" content="#121214">
+<!-- Pratinjau saat link dibagikan (WhatsApp, Facebook). TODO: ganti og:image dengan URL penuh, misalnya https://NAMAUSER.github.io/NAMAREPO/images/og.jpg -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<meta property="og:title" content="GSJA PACE – Gereja Sidang Jemaat Allah">
+<meta property="og:description" content="Ibadah, renungan harian, events, dan live streaming GSJA PACE Nganjuk.">
+<meta property="og:image" content="images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="images/hero-m.jpg" media="(max-width:767px)">
+<link rel="preload" as="image" href="images/hero.jpg" media="(min-width:768px)">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Church","name":"GSJA PACE","description":"Gereja Sidang Jemaat Allah Pace, Nganjuk","telephone":"+6281222579975","address":{"@type":"PostalAddress","streetAddress":"Jalan Raya Nganjuk Kediri No. 40, Desa Pacekulon","addressLocality":"Pace","addressRegion":"Jawa Timur","addressCountry":"ID"}}</script>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}document.documentElement.classList.add('js');(function(){var d=document.documentElement;if(matchMedia('(max-width:767px)').matches||matchMedia('(pointer:coarse)').matches||(navigator.deviceMemory&&navigator.deviceMemory<=4))d.classList.add('lite')})()</script>
+<noscript><style>.pre{display:none!important}</style></noscript>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link href="style.css?v=26" rel="stylesheet">
+</head>
+<body>
+<div class="pre" id="pre" aria-hidden="true"><canvas id="preCanvas"></canvas><div class="pre-word" id="preWord">WELCOME</div></div>
+<div class="scroll-progress" aria-hidden="true"><i></i></div>
+<div class="blobs" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<!-- MENU -->
+<header class="topbar" id="nav">
+  <div class="container-xl bar">
+    <a href="#home" class="brand" aria-label="GSJA PACE"><img src="images/logo.png" alt="Logo GSJA PACE" class="logo"></a>
+    <nav class="links d-none d-lg-flex">
+      <a href="#home"><span data-t="Beranda">Beranda</span></a><a href="#tentang"><span data-t="Tentang">Tentang</span></a><a href="#pelayanan"><span data-t="Pelayanan">Pelayanan</span></a><a href="#renungan"><span data-t="Renungan">Renungan</span></a><a href="#events"><span data-t="Events">Events</span></a><a href="#galeri"><span data-t="Galeri">Galeri</span></a><a href="#kontak"><span data-t="Kontak">Kontak</span></a>
+    </nav>
+    <div class="actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Ganti tema terang atau gelap"><i class="fa-solid fa-sun"></i></button>
+      <a class="live-pill" href="#live"><span class="dot"></span>Live</a>
+      <button class="icon-btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+<div class="offcanvas offcanvas-end" id="menu" tabindex="-1">
+  <div class="offcanvas-header"><img src="images/logo.png" alt="" class="logo"><button class="icon-btn" data-bs-dismiss="offcanvas" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button></div>
+  <nav class="offcanvas-body">
+    <a data-bs-dismiss="offcanvas" href="#home">Beranda</a>
+    <a data-bs-dismiss="offcanvas" href="#tentang">Tentang Kami</a>
+    <a data-bs-dismiss="offcanvas" href="#perjalanan">Perjalanan Iman</a>
+    <a data-bs-dismiss="offcanvas" href="#gembala">Gembala</a>
+    <a data-bs-dismiss="offcanvas" href="#pelayanan">Pelayanan</a>
+    <a data-bs-dismiss="offcanvas" href="#renungan">Renungan</a>
+    <a data-bs-dismiss="offcanvas" href="#events">Events</a>
+    <a data-bs-dismiss="offcanvas" href="#galeri">Galeri</a>
+    <a data-bs-dismiss="offcanvas" href="#live">Live Streaming</a>
+    <a data-bs-dismiss="offcanvas" href="#kontak">Kontak</a>
+  </nav>
+</div>
+
+<!-- BERANDA -->
+<section id="home" class="hero">
+  <picture class="hero-bg" aria-hidden="true"><source media="(max-width:767px)" srcset="images/hero-m.jpg"><img src="images/hero.jpg" alt="" fetchpriority="high" decoding="async"></picture>
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="container-xl hero-in">
+    <p class="kicker">Gereja Sidang Jemaat Allah</p>
+    <h1>GSJA PACE</h1>
+    <p class="verse">“Sebab di mana dua atau tiga orang berkumpul dalam nama-Ku, di situ Aku ada di tengah-tengah mereka.” <small>Matius 18:20</small></p>
+    <div class="d-flex flex-wrap gap-2">
+      <a href="#live" class="btn btn-play"><i class="fa-solid fa-play me-2"></i>Ibadah Online</a>
+      <a href="#ibadah" class="btn btn-info-g"><i class="fa-solid fa-circle-info me-2"></i>Jadwal Ibadah</a>
+    </div>
+  </div>
+</section>
+
+<main class="rows">
+
+<!-- JADWAL IBADAH -->
+<section id="ibadah" class="row-s">
+  <div class="container-xl">
+    <h3 class="row-t">Jadwal Ibadah</h3>
+    <!-- Hitung mundur: dibaca otomatis dari kartu jadwal di bawah (hari + jam), waktu WIB -->
+    <div class="countdown glass" id="cd">
+      <div class="cd-info"><small id="cdLabel">Ibadah berikutnya</small><h4 id="cdName"></h4><span id="cdWhen"></span></div>
+      <div class="cd-units">
+        <div class="cd-u"><b data-u="d">00</b><small>Hari</small></div>
+        <div class="cd-u"><b data-u="h">00</b><small>Jam</small></div>
+        <div class="cd-u"><b data-u="m">00</b><small>Menit</small></div>
+        <div class="cd-u"><b data-u="s">00</b><small>Detik</small></div>
+      </div>
+      <a href="#live" class="btn btn-play cd-live"><i class="fa-solid fa-circle-play me-2"></i>Gabung Live</a>
+    </div>
+  </div>
+  <div class="swiper row-sw">
+    <div class="swiper-wrapper">
+      <!-- TODO: sesuaikan hari dan jam ibadah -->
+      <div class="swiper-slide sched glass"><i class="fa-solid fa-church"></i><small>Minggu</small><b>08.00</b><span>Ibadah Raya</span></div>
+      <div class="swiper-slide sched glass"><i class="fa-solid fa-hands-praying"></i><small>Kamis</small><b>17.00</b><span>Ibadah Keluarga</span></div>
+      <div class="swiper-slide sched glass"><i class="fa-solid fa-people-group"></i><small>Sabtu</small><b>18.00</b><span>Ibadah Pemuda</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RENUNGAN HARI INI -->
+<section id="renungan" class="row-s">
+  <div class="container-xl">
+    <h3 class="row-t">Renungan Hari Ini</h3>
+    <a href="#" class="devo-card" data-bs-toggle="modal" data-bs-target="#devoModal">
+      <div class="dc-media">
+        <img id="devoCardImg" src="" alt="" loading="lazy">
+        <span class="dc-date glass"><b id="dcDay"></b><span id="dcMon"></span></span>
+        <span class="dc-read glass"><i class="fa-regular fa-clock me-1"></i><span id="dcMin"></span> menit baca</span>
+      </div>
+      <div class="dc-body glass">
+        <span class="badge-r">Renungan Harian</span>
+        <h2 id="devoCardTitle"></h2>
+        <blockquote id="dcQuote"></blockquote>
+        <cite id="devoCardVerse"></cite>
+        <span class="btn btn-play mt-3"><i class="fa-solid fa-book-open me-2"></i>Baca Renungan</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PELAYANAN -->
+<section id="pelayanan" class="row-s">
+  <div class="container-xl"><h3 class="row-t">Pelayanan</h3></div>
+  <div class="swiper row-sw">
+    <div class="swiper-wrapper">
+      <a class="swiper-slide top" data-zoom role="button" tabindex="0" aria-label="Lihat foto Pemuda"><span class="num">1</span><div class="poster"><img src="images/pelayanan-pemuda.webp" alt="" loading="lazy"><h4>Pemuda</h4></div></a>
+      <a class="swiper-slide top" data-zoom role="button" tabindex="0" aria-label="Lihat foto Anak"><span class="num">2</span><div class="poster"><img src="images/pelayanan-anak.webp" alt="" loading="lazy"><h4>Anak</h4></div></a>
+      <a class="swiper-slide top" data-zoom role="button" tabindex="0" aria-label="Lihat foto Wanita"><span class="num">3</span><div class="poster"><img src="images/pelayanan-wanita.webp" alt="" loading="lazy"><h4>Wanita</h4></div></a>
+      <a class="swiper-slide top" data-zoom role="button" tabindex="0" aria-label="Lihat foto Pria"><span class="num">4</span><div class="poster"><img src="images/pelayanan-pria.webp" alt="" loading="lazy"><h4>Pria</h4></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" class="row-s">
+  <div class="container-xl"><h3 class="row-t">Events</h3></div>
+  <div class="swiper row-sw">
+    <div class="swiper-wrapper">
+      <!-- TODO: ganti agenda dan foto -->
+      <a class="swiper-slide land" data-zoom role="button" tabindex="0" aria-label="Lihat foto Perayaan Natal"><img src="images/events-natal.webp" alt="" loading="lazy"><span class="date glass"><b>27</b>Des</span><h4>Perayaan Natal</h4></a>
+      <a class="swiper-slide land" data-zoom role="button" tabindex="0" aria-label="Lihat foto Ibadah Akhir Tahun"><img src="images/events-tahunbaru.webp" alt="" loading="lazy"><span class="date glass"><b>31</b>Des</span><h4>Ibadah Akhir Tahun</h4></a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE BESAR -->
+<div class="big-mq" aria-hidden="true"><div class="bm-track" id="bmTrack"><span>Beribadah</span><em>✦</em><span>Memuridkan</span><em>✦</em><span>Melayani</span><em>✦</em><span>Memberitakan Injil</span><em>✦</em></div></div>
+
+<!-- TENTANG -->
+<section id="tentang" class="row-s">
+  <div class="container-xl">
+    <h3 class="row-t">Tentang Kami</h3>
+    <!-- TODO: ganti dengan sejarah asli gereja -->
+    <p class="lead-s">Berawal dari persekutuan kecil orang percaya yang rindu melayani Tuhan bersama, kini kami terus bertumbuh sebagai satu keluarga.</p>
+    <div class="row g-3">
+      <div class="col-md-6"><div class="card3 glass"><b>01</b><h5>Visi</h5><p>Gereja yang hidup, bertumbuh, dan menjadi berkat.</p></div></div>
+      <div class="col-md-6"><div class="card3 glass"><b>02</b><h5>Misi</h5><p>Beribadah, memuridkan, melayani, dan memberitakan Injil.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE NILAI (arah berlawanan) -->
+<div class="big-mq" aria-hidden="true"><div class="bm-track" id="bmTrack2" data-dir="r"><span>Firman</span><em>✦</em><span>Kasih</span><em>✦</em><span>Roh Kudus</span><em>✦</em><span>Persekutuan</span><em>✦</em></div></div>
+
+<!-- PERJALANAN IMAN: adegan 3D yang bergerak mengikuti scroll -->
+<section id="perjalanan" class="journey" aria-label="Perjalanan Iman">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="cl" viewBox="0 0 220 100"><g fill="currentColor"><circle cx="60" cy="62" r="30"/><circle cx="105" cy="45" r="40"/><circle cx="150" cy="58" r="32"/><circle cx="185" cy="68" r="22"/><rect x="40" y="60" width="160" height="30" rx="15"/></g></symbol></svg>
+  <div class="j-stage">
+    <div class="j-sky s1"></div><div class="j-sky s2"></div><div class="j-sky s3"></div><div class="j-sky s4"></div>
+    <div class="j-stars" aria-hidden="true"></div><div class="shoot" aria-hidden="true"></div>
+    <div class="j-clouds" aria-hidden="true">
+      <svg class="j-cl" data-d=".9" viewBox="0 0 220 100" style="left:-6%;top:62%;width:46%"><use href="#cl"/></svg>
+      <svg class="j-cl" data-d=".6" viewBox="0 0 220 100" style="right:-8%;top:48%;width:52%;opacity:.7"><use href="#cl"/></svg>
+      <svg class="j-cl" data-d="1.1" viewBox="0 0 220 100" style="left:22%;top:80%;width:60%"><use href="#cl"/></svg>
+      <svg class="j-cl" data-d=".4" viewBox="0 0 220 100" style="left:4%;top:26%;width:30%;opacity:.55"><use href="#cl"/></svg>
+      <svg class="j-cl" data-d=".7" viewBox="0 0 220 100" style="right:6%;top:18%;width:34%;opacity:.5"><use href="#cl"/></svg>
+    </div>
+    <div class="j-head"><p class="label j-label">Perjalanan Iman</p><h2>Dari Firman menuju terang</h2></div>
+    <div class="cross-wrap" id="crossWrap" aria-label="Salib tiga dimensi, geser untuk memutar">
+      <div class="j-glow"></div>
+      <div class="stage3d"><div class="j-ring r1"></div><div class="j-ring r2"></div><div class="cross3d" id="cross3d"></div></div>
+      <span class="j-hint glass">Geser salib untuk memutar</span>
+    </div>
+    <!-- TODO: ubah teks keempat bab sesuai kebutuhan -->
+    <article class="j-chap"><b>01</b><small>Firman</small><h3>Mulai dari mendengar</h3><p>Perjalanan iman dimulai ketika kita mau mendengar. Firman Tuhan menjadi terang bagi setiap langkah kita.</p></article>
+    <article class="j-chap"><b>02</b><small>Kasih</small><h3>Digerakkan oleh kasih</h3><p>Kasih menggerakkan kita keluar dari diri sendiri, untuk melihat dan melayani sesama.</p></article>
+    <article class="j-chap"><b>03</b><small>Roh Kudus</small><h3>Dituntun dan dikuatkan</h3><p>Roh Kudus menuntun, menguatkan, dan memperbarui kita dari hari ke hari.</p></article>
+    <article class="j-chap"><b>04</b><small>Persekutuan</small><h3>Berjalan bersama</h3><p>Kita tidak berjalan sendiri. Bersama keluarga Allah, kita bertumbuh sampai tujuan.</p></article>
+    <div class="j-fade" aria-hidden="true"></div><div class="j-fade fb" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- GEMBALA -->
+<section id="gembala" class="row-s">
+  <div class="container-xl">
+    <div class="pastor-wrap">
+      <span class="ghost-w" aria-hidden="true">Gembala</span>
+      <!-- TODO: ganti foto gembala (potret, rasio 4:5) -->
+      <div class="p-photo"><img src="images/gembala.webp" alt="Gembala GSJA PACE" loading="lazy"></div>
+      <div class="p-block glass">
+        <!-- TODO: ganti nama gembala -->
+        <h2 class="script">Pdt. A H Purnadi</h2>
+        <span class="role">Gembala Sidang</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="row-s">
+  <div class="container-xl"><h3 class="row-t">Galeri</h3></div>
+  <div class="swiper gal">
+    <div class="swiper-wrapper">
+      <!-- TODO: ganti foto dan keterangan -->
+      <div class="swiper-slide g-slide"><img src="images/galeri-ibadahraya.webp" alt="Ibadah Raya" loading="lazy"><span class="tag glass">Ibadah Raya</span></div>
+      <div class="swiper-slide g-slide"><img src="images/galeri-ibadahpria.webp" alt="Ibadah Pria" loading="lazy"><span class="tag glass">Ibadah Pria</span></div>
+      <div class="swiper-slide g-slide"><img src="images/galeri-ultah.webp" alt="Ultah Gereja" loading="lazy"><span class="tag glass">Ultah Gereja</span></div>
+      <div class="swiper-slide g-slide"><img src="images/galeri-sm.webp" alt="Ibadah Sekolah Minggu" loading="lazy"><span class="tag glass">Ibadah Sekolah Minggu</span></div>
+      <div class="swiper-slide g-slide"><img src="images/galeri-levelup.webp" alt="Natal" loading="lazy"><span class="tag glass">WFE Level Up</span></div>
+    </div>
+  </div>
+  <div class="gal-ctrl">
+    <button class="icon-btn ring" id="galPrev" aria-label="Sebelumnya"><i class="fa-solid fa-arrow-left"></i></button>
+    <div class="swiper-pagination gal-pg"></div>
+    <button class="icon-btn ring" id="galNext" aria-label="Berikutnya"><i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</section>
+
+<!-- LIVE -->
+<section id="live" class="row-s">
+  <div class="container-xl">
+    <h3 class="row-t"><span class="live-badge"><span class="dot"></span>LIVE</span> Live Streaming</h3>
+    <div class="ratio ratio-16x9 vid yt" data-yt="qaQajE8l8Uk">
+      <!-- Ganti isi data-yt di atas dengan ID video ATAU tempel saja link YouTube lengkapnya (watch?v=..., youtu.be/...). -->
+      <div class="yt-inner">
+        <button class="yt-play" type="button" aria-label="Putar Live Streaming GSJA PACE">
+          <img class="yt-thumb" alt="" decoding="async">
+          <span class="yt-btn glass"><i class="fa-solid fa-play"></i></span>
+          <span class="yt-label glass"><span class="dot"></span>Live Streaming GSJA PACE</span>
+        </button>
+        <a class="yt-ext glass" href="https://www.youtube.com/" target="_blank" rel="noopener"><i class="fa-brands fa-youtube me-1"></i>Buka di YouTube</a>
+      </div>
+    </div>
+    <div class="sponsor">
+      <p class="sub text-center">Support By</p>
+      <div class="marquee" aria-label="Sponsor">
+        <div class="mq-mask"><div class="mq-track" id="mqTrack">
+          <!-- TODO: ganti dengan sponsor asli. Satu sponsor = satu kartu. Pilih salah satu bentuk:
+               Gambar/banner/logo (rasio bebas, tampil utuh) : <div class="sp"><img src="images/sponsor1.jpg" alt="Nama Sponsor"></div>
+               Teks                                      : <div class="sp"><span>Nama Sponsor</span></div> -->
+          <div class="sp"><img src="images/sponsor1.webp" alt="Sponsor 1"></div>
+          <div class="sp"><span>Jemaat GSJA</span></div>
+          <div class="sp"><img src="images/sponsor2.webp" alt="Sponsor 2"></div>
+          <div class="sp"><img src="images/sponsor3.webp" alt="Sponsor 3"></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak" class="row-s">
+  <div class="container-xl">
+    <h3 class="row-t">Kontak</h3>
+    <div class="row g-3">
+      <div class="col-lg-5">
+        <div class="glass contact">
+          <!-- TODO: ganti alamat, nomor WA, dan jam ibadah -->
+          <div class="ci"><i class="fa-solid fa-location-dot"></i><div><small>Alamat</small><b>Jalan Raya Nganjuk – Kediri No. 40, Desa Pacekulon Kecamatan Pace, Kabupaten Nganjuk, Jawa Timur</b></div></div>
+          <div class="ci"><i class="fa-brands fa-whatsapp"></i><div><small>WhatsApp</small><b>+62 816 558 609</b></div></div>
+          <div class="ci"><i class="fa-regular fa-clock"></i><div><small>Ibadah Raya</small><b>Minggu, 08.00 WIB</b></div></div>
+          <a class="btn btn-wa w-100 mt-2" target="_blank" rel="noopener" href="https://wa.me/62816558609?text=Shalom%2C%20saya%20ingin%20bertanya%20tentang%20GSJA%20PACE"><i class="fa-brands fa-whatsapp me-2"></i>Chat WhatsApp</a>
+          <div class="social mt-4">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/@gsjapace" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7"><div class="ratio ratio-4x3 vid"><iframe src="https://www.google.com/maps?q=GSJA PACEk&output=embed" title="Lokasi GSJA PACE" loading="lazy" allowfullscreen></iframe></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="mega-f">
+  <div class="mf-big" aria-hidden="true">GSJA PACE</div>
+  <div class="container-xl mf-bot"><small>© <span id="year"></span> GSJA PACE</small></div>
+</footer>
+
+<!-- MODAL RENUNGAN -->
+<div class="modal fade" id="devoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <button class="icon-btn close-m" data-bs-dismiss="modal" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+      <div class="read-bar" aria-hidden="true"><i id="readBar"></i></div>
+      <div class="modal-body" id="devoScroll">
+        <div class="modal-top">
+          <img id="devoTopImg" src="" alt="">
+          <div><span class="badge-r">Renungan Harian</span><small id="devoDate"></small><h2 id="devoTitle"></h2></div>
+        </div>
+        <div class="devo-inner" id="devoBody"></div>
+      </div>
+      <div class="modal-footer"><a class="btn btn-wa" id="devoShare" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp me-2"></i>Bagikan</a><button class="btn btn-info-g" data-bs-dismiss="modal">Tutup</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX GALERI -->
+<div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"><div class="modal-content lb"><button class="icon-btn close-m" data-bs-dismiss="modal" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button><img id="lbImg" src="" alt=""></div></div>
+</div>
+
+<!-- MUSIK LATAR: letakkan file musik di folder audio/ dengan nama musik.mp3 (atau ubah alamat src di bawah) -->
+<audio id="bgm" src="audio/musik.mp3" loop preload="none"></audio>
+<button class="music-btn" id="musicBtn" type="button" aria-label="Putar musik" aria-pressed="false" title="Putar musik">
+  <span class="mi"><i class="fa-solid fa-music"></i></span>
+  <span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="renungan.js?v=20"></script>
+<script src="site.js?v=27"></script>
+</body>
+</html>
